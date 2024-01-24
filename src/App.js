@@ -11,6 +11,7 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 import './style.css';
+import OpenAI from 'openai';
 
 function App() {
   const MAX_NUM_MESSAGES = 50;
@@ -49,30 +50,33 @@ function App() {
   // API stuff
 
   const system = "Here goes system";
-  const systemJson = { "role": "system", "content":  system  };
+  const systemJson = { role: "system", content:  system  };
 
   const [messageToSend, setMessageToSend] = useState(null);
   const [apiMessages, setApiMessages] = useState([systemJson]);
 
-
-
-  const submitMessage = (message) => {
+  
+  const openai=new OpenAI({apiKey:"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", dangerouslyAllowBrowser: true});
+  const submitMessage = async (message) => {
     //here generate response
     console.log("nsnasnn" +message)
-    const response=message;
+    const completion = await openai.chat.completions.create({
+      messages: apiMessages,
+      model: "ft:gpt-3.5-turbo-1106:personal::8hjMR5gH",
+    });
     setMessagesModel([
       ...messagesModel,
       {
         isMe: false,
-        message:message,
+        message:completion.choices[0].message.content,
       },
     ]);
     setApiMessages(
       [
         ...apiMessages,
         {
-          "role": "assistant",
-          "content": message,
+          role: "assistant",
+          content: completion.choices[0].message.content,
         },
       ]
     );
@@ -114,8 +118,8 @@ function App() {
       [
         ...apiMessages,
         {
-          "role": "user",
-          "content": message,
+          role: "user",
+          content: message,
         },
       ]
     );
