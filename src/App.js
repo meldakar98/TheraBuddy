@@ -49,7 +49,7 @@ function App() {
 
   // API stuff
 
-  const system = "Here goes system";
+  const system = "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrungen (Beck 1976) auf. Du versuchst, bestmöglich auf die Aussagen des Patienten oder der Patientin im Sinne eines sokratischen Dialogs einzugehen. Achtest dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren";
   const systemJson = { role: "system", content:  system  };
 
   const [messageToSend, setMessageToSend] = useState(null);
@@ -146,7 +146,7 @@ function App() {
         </div>
         <div className="flex-1 d-flex flex-column">
           <div className="rounded-0 shadow">
-            <MessageListHeader data={{ title: 'Channel Name', avatarUrl: '' }} />
+            <MessageListHeader data={{ title: 'TheraBuddy', avatarUrl: '' }} />
           </div>
           <div className="message-list flex-1 mh-100 h-100 overflow-auto">
             <MessageList

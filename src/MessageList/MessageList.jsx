@@ -36,7 +36,7 @@ function MessageList(props) {
         loadMore={next}
         hasMore={hasMore}
         style={{ display: 'flex', flexDirection: 'column' }}
-        loader={<div className="loader" key={0}>Loading ...</div>}
+        loader={<div className="loader" key={0}></div>}
         useWindow={false}
         threshold={25}
         initialLoad={false}
