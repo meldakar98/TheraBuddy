@@ -5,9 +5,44 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.flex-1 {
+  flex: 1;
+}
+.main-div{
+  height: 100vh;
+}
+.message-list {
+  min-width: 140px;
+}
+
+.chat-list {
+  min-width: 105px;
+  width: 105px;
+  border-right: 1px solid rgb(219, 11, 11);
+}
+
+@media (min-width: 576px) {
+  .chat-list {
+      width: 200px;
+  }
+}
+
+@media (min-width: 768px) {
+  .chat-list {
+      width: 320px;
+  }
+}
+
+@media (min-width: 992px) {
+  .chat-list {
+      width: 400px;
+  }
 }
