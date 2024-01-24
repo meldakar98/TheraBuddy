@@ -57,23 +57,40 @@ function App() {
 
 
   const submitMessage = (message) => {
+    //here generate response
+    console.log("nsnasnn" +message)
+    const response=message;
     setMessagesModel([
       ...messagesModel,
       {
         isMe: false,
-        message,
+        message:message,
       },
     ]);
+    setApiMessages(
+      [
+        ...apiMessages,
+        {
+          "role": "assistant",
+          "content": message,
+        },
+      ]
+    );
 
     setTriggerScrollToBottom(!triggerScrollToBottom);
   };
+  useEffect(()=>{
+    console.log("Here I AAAAm \n");
+    console.log(messagesModel);
+    console.log("API");
+    console.log(apiMessages);
+  },[messagesModel])
 
   useEffect(() => {
     if (messageToSend) {
 
       submitMessage(messageToSend.message);
-      console.log(messagesModel);
-      console.log("hey" + { messageToSend });
+      console.log("hey" +  messageToSend.message );
 
     }
 
@@ -98,10 +115,10 @@ function App() {
         ...apiMessages,
         {
           "role": "user",
-          "content": message.message,
+          "content": message,
         },
       ]
-    )
+    );
 
 
     setTriggerScrollToBottom(!triggerScrollToBottom);
