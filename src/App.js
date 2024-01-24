@@ -64,6 +64,8 @@ function App() {
         message,
       },
     ]);
+
+    setTriggerScrollToBottom(!triggerScrollToBottom);
   };
 
   useEffect(() => {
