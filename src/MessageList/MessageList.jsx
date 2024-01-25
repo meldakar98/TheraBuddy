@@ -10,7 +10,6 @@ function MessageList(props) {
     dataSource, triggerScrollToBottom, next, hasMore,
   } = props;
 
-  const [apiMessages,setApiMessages]=useState(dataSource)
 
 
 

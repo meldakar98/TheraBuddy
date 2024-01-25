@@ -16,7 +16,6 @@ import OpenAI from 'openai';
 function App() {
   const MAX_NUM_MESSAGES = 50;
   const [initialMessages, setInitialMessages] = useState([]);
-  const [messagesToAppend, setmessagesToAppend] = useState([]);
   const [activeChannelId, setActiveChannelId] = useState(0);
   const [triggerScrollToBottom, setTriggerScrollToBottom] = useState(false);
   const [messagesModel, setMessagesModel] = useState(initialMessages);
@@ -33,7 +32,6 @@ function App() {
   const next = () => {
     if (messagesModel.length <= MAX_NUM_MESSAGES) {
       setMessagesModel([
-        ...messagesToAppend,
         ...messagesModel,
       ]);
 
