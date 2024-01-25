@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TheraBuddy/static/css/main.9d12ea5b.css",
+    "main.js": "/TheraBuddy/static/js/main.b07bf38d.js",
+    "static/js/787.a4aa000e.chunk.js": "/TheraBuddy/static/js/787.a4aa000e.chunk.js",
+    "index.html": "/TheraBuddy/index.html",
+    "main.9d12ea5b.css.map": "/TheraBuddy/static/css/main.9d12ea5b.css.map",
+    "main.b07bf38d.js.map": "/TheraBuddy/static/js/main.b07bf38d.js.map",
+    "787.a4aa000e.chunk.js.map": "/TheraBuddy/static/js/787.a4aa000e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9d12ea5b.css",
+    "static/js/main.b07bf38d.js"
+  ]
+}
