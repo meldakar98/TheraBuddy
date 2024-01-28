@@ -1,17 +1,7 @@
 {
   "chats": [
     {
-      "date": "01.01.2024",
-      "messages": [],
-      "id": "1"
-    },
-    {
-      "date": "01.01.2024",
-      "messages": [],
-      "id": "2"
-    },
-    {
-      "id": "9b27",
+      "id": "4b34",
       "date": "",
       "apiMessages": [
         {
@@ -20,45 +10,33 @@
         },
         {
           "role": "user",
-          "content": "hey its me "
+          "content": "hallo"
         },
         {
           "role": "assistant",
-          "content": "Welcome back. How have you been feeling since our last conversation?"
+          "content": "Hallo! Wie geht es dir heute?"
         },
         {
           "role": "user",
-          "content": "not6 giwjq"
+          "content": "nicht gut "
         },
         {
           "role": "assistant",
-          "content": "It sounds like things have been challenging. Can you tell me more about what's been on your mind?"
+          "content": "Das tut mir leid zu hören. Möchtest du darüber sprechen, was los ist?"
         },
         {
           "role": "user",
-          "content": "jdasn"
-        },
-        {
-          "role": "user",
-          "content": "#kajh"
+          "content": "ich habe viele probleme "
         },
         {
           "role": "assistant",
-          "content": "It seems like you're having difficulty expressing your thoughts. Take your time. When you're ready, I'm here to listen."
-        },
-        {
-          "role": "user",
-          "content": "jkwqn"
-        },
-        {
-          "role": "assistant",
-          "content": "It's okay if you're not ready to chat. If you want to talk later, feel free to reach out. Take care."
+          "content": "Verstehe. Es ist okay, darüber sprechen zu wollen. Lass uns einen Schritt nach dem anderen gehen. Gibt es einen spezifischen Bereich, bei dem du beginnen möchtest?"
         }
       ]
     },
     {
-      "id": "b72c",
-      "date": "",
+      "id": "a78c",
+      "date": "2024-01-28T21:37:53.717Z",
       "apiMessages": [
         {
           "role": "system",
@@ -66,43 +44,31 @@
         },
         {
           "role": "user",
-          "content": "hey its me "
+          "content": "hallo"
         },
         {
           "role": "assistant",
-          "content": "Welcome back. How have you been feeling since our last conversation?"
+          "content": "Hallo! Wie geht es dir heute?"
         },
         {
           "role": "user",
-          "content": "not6 giwjq"
+          "content": "nicht gut "
         },
         {
           "role": "assistant",
-          "content": "It sounds like things have been challenging. Can you tell me more about what's been on your mind?"
+          "content": "Das tut mir leid zu hören. Möchtest du darüber sprechen, was los ist?"
         },
         {
           "role": "user",
-          "content": "jdasn"
-        },
-        {
-          "role": "user",
-          "content": "#kajh"
+          "content": "ich habe viele probleme "
         },
         {
           "role": "assistant",
-          "content": "It seems like you're having difficulty expressing your thoughts. Take your time. When you're ready, I'm here to listen."
-        },
-        {
-          "role": "user",
-          "content": "jkwqn"
+          "content": "Verstehe. Es ist okay, darüber sprechen zu wollen. Lass uns einen Schritt nach dem anderen gehen. Gibt es einen spezifischen Bereich, bei dem du beginnen möchtest?"
         },
         {
           "role": "assistant",
-          "content": "It's okay if you're not ready to chat. If you want to talk later, feel free to reach out. Take care."
-        },
-        {
-          "role": "assistant",
-          "content": "Hey there, I'm here to help. Let's take one step at a time. What's been on your mind recently?"
+          "content": "Lass uns das genauer betrachten. Was macht dich besonders besorgt in Bezug auf deine Zukunft?"
         }
       ]
     }

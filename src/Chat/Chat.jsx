@@ -105,7 +105,7 @@ function Chat(props) {
 
 
   const handleSubmit = () => {
-    const date="";
+    const date=new Date();
     const chat = { date, apiMessages };
     fetch('http://localhost:8001/chats/', {
       method: 'POST',
