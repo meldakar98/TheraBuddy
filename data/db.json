@@ -1,0 +1,110 @@
+{
+  "chats": [
+    {
+      "date": "01.01.2024",
+      "messages": [],
+      "id": "1"
+    },
+    {
+      "date": "01.01.2024",
+      "messages": [],
+      "id": "2"
+    },
+    {
+      "id": "9b27",
+      "date": "",
+      "apiMessages": [
+        {
+          "role": "system",
+          "content": "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrungen (Beck 1976) auf. Du versuchst, bestmöglich auf die Aussagen des Patienten oder der Patientin im Sinne eines sokratischen Dialogs einzugehen. Achtest dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren. du sollst auch nicht zu lang beantworten"
+        },
+        {
+          "role": "user",
+          "content": "hey its me "
+        },
+        {
+          "role": "assistant",
+          "content": "Welcome back. How have you been feeling since our last conversation?"
+        },
+        {
+          "role": "user",
+          "content": "not6 giwjq"
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like things have been challenging. Can you tell me more about what's been on your mind?"
+        },
+        {
+          "role": "user",
+          "content": "jdasn"
+        },
+        {
+          "role": "user",
+          "content": "#kajh"
+        },
+        {
+          "role": "assistant",
+          "content": "It seems like you're having difficulty expressing your thoughts. Take your time. When you're ready, I'm here to listen."
+        },
+        {
+          "role": "user",
+          "content": "jkwqn"
+        },
+        {
+          "role": "assistant",
+          "content": "It's okay if you're not ready to chat. If you want to talk later, feel free to reach out. Take care."
+        }
+      ]
+    },
+    {
+      "id": "b72c",
+      "date": "",
+      "apiMessages": [
+        {
+          "role": "system",
+          "content": "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrungen (Beck 1976) auf. Du versuchst, bestmöglich auf die Aussagen des Patienten oder der Patientin im Sinne eines sokratischen Dialogs einzugehen. Achtest dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren. du sollst auch nicht zu lang beantworten"
+        },
+        {
+          "role": "user",
+          "content": "hey its me "
+        },
+        {
+          "role": "assistant",
+          "content": "Welcome back. How have you been feeling since our last conversation?"
+        },
+        {
+          "role": "user",
+          "content": "not6 giwjq"
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like things have been challenging. Can you tell me more about what's been on your mind?"
+        },
+        {
+          "role": "user",
+          "content": "jdasn"
+        },
+        {
+          "role": "user",
+          "content": "#kajh"
+        },
+        {
+          "role": "assistant",
+          "content": "It seems like you're having difficulty expressing your thoughts. Take your time. When you're ready, I'm here to listen."
+        },
+        {
+          "role": "user",
+          "content": "jkwqn"
+        },
+        {
+          "role": "assistant",
+          "content": "It's okay if you're not ready to chat. If you want to talk later, feel free to reach out. Take care."
+        },
+        {
+          "role": "assistant",
+          "content": "Hey there, I'm here to help. Let's take one step at a time. What's been on your mind recently?"
+        }
+      ]
+    }
+  ]
+}
