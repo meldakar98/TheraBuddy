@@ -126,7 +126,7 @@ function Chat(props) {
       </div>
       <div className="message-list flex-1 mh-100 h-100 overflow-auto">
         <MessageList
-          dataSource={messagesModel}
+          dataSource={apiMessages.slice(1)}
           triggerScrollToBottom={triggerScrollToBottom}
           channelId={activeId}
           next={next}

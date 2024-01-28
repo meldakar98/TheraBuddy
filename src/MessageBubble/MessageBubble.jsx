@@ -6,9 +6,9 @@ import classNames from 'classnames';
 
 function MessageBubble(props) {
   const { data } = props;
-  const align = data.isMe ? 'align-self-end' : 'align-self-start';
-  const bg = data.isMe ? 'bg-primary' : 'bg-secondary';
-  const margin = data.isMe ? 'ms-5' : 'me-5';
+  const align = data.role=="user" ? 'align-self-end' : 'align-self-start';
+  const bg =  data.role=="user" ? 'bg-primary' : 'bg-secondary';
+  const margin =  data.role=="user" ? 'ms-5' : 'me-5';
   return (
     <div
       className={
@@ -20,7 +20,7 @@ function MessageBubble(props) {
         )
       }
     >
-      <div>{data.message}</div>
+      <div>{data.content}</div>
     </div>
   );
 }
