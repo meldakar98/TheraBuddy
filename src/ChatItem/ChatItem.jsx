@@ -11,6 +11,7 @@ function ChatItem(props) {
 
   const onClick = () => {
     onItemClick(data.id);
+    console.log(data.id);
   };
   return (
     <div
@@ -43,7 +44,7 @@ function ChatItem(props) {
       <div className="flex-1 d-none d-sm-flex flex-column justify-content-center overflow-hidden pr-2">
         <div className="d-flex align-items-center">
           <div className="white-space-nowrap text-overflow-ellipsis fs-100rem font-weight-bold overflow-hidden flex-1">
-            {data.title}
+            
           </div>
           <div className="fs-80rem overflow-hidden">
             {data.date}
@@ -51,10 +52,7 @@ function ChatItem(props) {
         </div>
         <div className="d-flex">
           <div className="white-space-nowrap text-overflow-ellipsis overflow-hidden flex-1">
-            {data.subtitle || 'Chat now'}
-          </div>
-          <div className="ezychat-chat-item--body-bottom-unread">
-            {data.unread > 0 && <span>{data.unread}</span>}
+             Chat now
           </div>
         </div>
       </div>

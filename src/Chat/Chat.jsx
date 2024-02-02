@@ -7,11 +7,10 @@ import MessageList from '../MessageList/MessageList';
 import ChatInput from '../ChatInput/ChatInput';
 import OpenAI from 'openai';
 function Chat(props) {
-  const { dataSource ,triggerScrollToBottom,setTriggerScrollToBottom, activeId } = props;
+  const { dataSource ,triggerScrollToBottom,setTriggerScrollToBottom, activeId,setActive,setChanges } = props;
   
   const MAX_NUM_MESSAGES = 50;
   const [messagesModel, setMessagesModel] = useState(dataSource);
-
   
   const next = () => {
     if (messagesModel.length <= MAX_NUM_MESSAGES) {
@@ -21,12 +20,19 @@ function Chat(props) {
 
     }
   };
-  
-  const system = "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrungen (Beck 1976) auf. Du versuchst, bestmöglich auf die Aussagen des Patienten oder der Patientin im Sinne eines sokratischen Dialogs einzugehen. Achtest dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren. du sollst auch nicht zu lang beantworten";
+  useEffect(()=>{
+    if(dataSource.length!=0){
+
+    setApiMessages(dataSource)
+    }
+  },[dataSource])  
+  const system =  "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrung (nach Beck 1976) auf. Du versucht, bestmöglich auf die Aussagen im Sinne eines sokratischen Dialogs einzugehen. Achte dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren. Duze dein Gegenüber und antworte knapp";
   const systemJson = { role: "system", content:  system  };
   
   const [messageToSend, setMessageToSend] = useState(null);
   const [apiMessages, setApiMessages] = useState([systemJson]);
+  const [updated,setUpdated] =useState(true);
+
   
   
   const openai=new OpenAI({apiKey:"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", dangerouslyAllowBrowser: true});
@@ -35,7 +41,8 @@ function Chat(props) {
     console.log("nsnasnn" +message)
     const completion = await openai.chat.completions.create({
       messages: apiMessages,
-      model: "ft:gpt-3.5-turbo-1106:personal::8lj9rgFp",
+      model: "ft:gpt-3.5-turbo-1106:personal::8npObjkw",
+      
     });
     setMessagesModel([
       ...messagesModel,
@@ -100,14 +107,14 @@ function Chat(props) {
 
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {setShow(false); setApiMessages([systemJson]);setUpdated(true)}
   const handleShow = () => setShow(true);
 
 
   const handleSubmit = () => {
     const date=new Date();
     const chat = { date, apiMessages };
-    fetch('http://localhost:8001/chats/', {
+    fetch('http://localhost:8000/chats/', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(chat)
