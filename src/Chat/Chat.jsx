@@ -7,11 +7,11 @@ import MessageList from '../MessageList/MessageList';
 import ChatInput from '../ChatInput/ChatInput';
 import OpenAI from 'openai';
 function Chat(props) {
-  const { dataSource ,triggerScrollToBottom,setTriggerScrollToBottom, activeId,setActive,setChanges } = props;
-  
+  const { dataSource, triggerScrollToBottom, setTriggerScrollToBottom, activeId, setActive, setChanges } = props;
+
   const MAX_NUM_MESSAGES = 50;
   const [messagesModel, setMessagesModel] = useState(dataSource);
-  
+
   const next = () => {
     if (messagesModel.length <= MAX_NUM_MESSAGES) {
       setMessagesModel([
@@ -20,35 +20,35 @@ function Chat(props) {
 
     }
   };
-  useEffect(()=>{
-    if(dataSource.length!=0){
+  useEffect(() => {
+    if (dataSource.length != 0) {
 
-    setApiMessages(dataSource)
+      setApiMessages(dataSource)
     }
-  },[dataSource])  
-  const system =  "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrung (nach Beck 1976) auf. Du versucht, bestmöglich auf die Aussagen im Sinne eines sokratischen Dialogs einzugehen. Achte dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren. Duze dein Gegenüber und antworte knapp";
-  const systemJson = { role: "system", content:  system  };
-  
+  }, [dataSource])
+  const system = "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrung (nach Beck 1976) auf. Du versucht, bestmöglich auf die Aussagen im Sinne eines sokratischen Dialogs einzugehen. Achte dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren. Duze dein Gegenüber und antworte knapp";
+  const systemJson = { role: "system", content: system };
+
   const [messageToSend, setMessageToSend] = useState(null);
   const [apiMessages, setApiMessages] = useState([systemJson]);
-  const [updated,setUpdated] =useState(true);
+  const [updated, setUpdated] = useState(true);
 
-  
-  
-  const openai=new OpenAI({apiKey:"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", dangerouslyAllowBrowser: true});
+
+
+  const openai = new OpenAI({ apiKey: "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", dangerouslyAllowBrowser: true });
   const submitMessage = async (message) => {
     //here generate response
-    console.log("nsnasnn" +message)
+    console.log("nsnasnn" + message)
     const completion = await openai.chat.completions.create({
       messages: apiMessages,
-      model: "ft:gpt-3.5-turbo-1106:personal::8npObjkw",
-      
+      model: "ft:gpt-3.5-turbo-1106:personal::8p2K32Em",
+
     });
     setMessagesModel([
       ...messagesModel,
       {
         isMe: false,
-        message:completion.choices[0].message.content,
+        message: completion.choices[0].message.content,
       },
     ]);
     setApiMessages(
@@ -60,20 +60,20 @@ function Chat(props) {
         },
       ]
     );
-  
+
     setTriggerScrollToBottom(!triggerScrollToBottom);
   };
-  
+
   useEffect(() => {
     if (messageToSend) {
-  
+
       submitMessage(messageToSend.message);
-      console.log("hey" +  messageToSend.message );
-  
+      console.log("hey" + messageToSend.message);
+
     }
-  
+
   }, [messageToSend])
-  
+
   const onSend = (message) => {
     setMessagesModel([
       ...messagesModel,
@@ -82,12 +82,12 @@ function Chat(props) {
         message,
       },
     ]);
-  
+
     setMessageToSend({
       isMe: true,
       message,
     });
-  
+
     setApiMessages(
       [
         ...apiMessages,
@@ -97,35 +97,57 @@ function Chat(props) {
         },
       ]
     );
-  
-  
+
+
     setTriggerScrollToBottom(!triggerScrollToBottom);
   };
-  
+
 
 
 
   const [show, setShow] = useState(false);
 
-  const handleClose = () => {setShow(false); setApiMessages([systemJson]);setUpdated(true)}
+  const handleClose = () => { setShow(false); setApiMessages([systemJson]); setUpdated(true) ;}
   const handleShow = () => setShow(true);
 
 
   const handleSubmit = () => {
-    const date=new Date();
-    const chat = { date, apiMessages };
-    fetch('http://localhost:8000/chats/', {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(chat)
-    }).then(() => {
-      console.log('new chat added ');
-    });
+    const date = new Date();
+    if (activeId == 0) {
+
+      const chat = { date, apiMessages };
+      fetch('http://localhost:8000/chats/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(chat)
+      }).then(() => {
+        console.log('new chat added ');
+      });
+    }
+    else {
+      const message = { id: activeId };
+      fetch('http://localhost:8000/chats/' + activeId, {
+        method: 'DELETE',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(message)
+      }).then(() => {
+        console.log('new blog deleted');
+      });
+      const chat = { date, apiMessages };
+      fetch('http://localhost:8000/chats/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(chat)
+      }).then(() => {
+        console.log('new chat added ');
+      });
+    }
     handleClose();
+
   }
 
 
-  
+
   return (
     <div className="flex-1 d-flex flex-column">
       <div className="rounded-0 shadow">
