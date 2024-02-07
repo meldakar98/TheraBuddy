@@ -7,7 +7,7 @@ import MessageList from '../MessageList/MessageList';
 import ChatInput from '../ChatInput/ChatInput';
 import OpenAI from 'openai';
 function Chat(props) {
-  const { added,setAdded,dataSource, triggerScrollToBottom, setTriggerScrollToBottom, activeId, setActive, setChanges } = props;
+  const { dataSource, triggerScrollToBottom, setTriggerScrollToBottom, activeId, setActive, setChanges } = props;
 
   const MAX_NUM_MESSAGES = 50;
   const [messagesModel, setMessagesModel] = useState(dataSource);
@@ -38,8 +38,28 @@ function Chat(props) {
   const openai = new OpenAI({ apiKey: "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", dangerouslyAllowBrowser: true });
   const submitMessage = async (message) => {
     //here generate response
+    console.log("nsnasnn" + message)
+    let msg = "";
+    let msgs = [...apiMessages];
+    if (msgs.length > 5) {
+      for (let i = 3; i >0; i--) {
+        console.log(msgs.length)
+        const x = msgs[msgs.length-i];
+        msgs.splice(msgs.length-i,1);
+        if (x.role == "assistant") {
+          msg = msg.concat("   Therapeut: " + x.content);
+        } else if (x.role == "user") {
+
+          msg = msg.concat("   Patient: " + x.content);
+        }
+      }
+      console.log("Message : " + msg);
+      msgs.push({role:"user", content:msg})
+      console.log(JSON.stringify(msgs))
+    }
+
     const completion = await openai.chat.completions.create({
-      messages: apiMessages,
+      messages: msgs,
       model: "ft:gpt-3.5-turbo-1106:personal::8p2K32Em",
 
     });
@@ -67,6 +87,7 @@ function Chat(props) {
     if (messageToSend) {
 
       submitMessage(messageToSend.message);
+      console.log("hey" + messageToSend.message);
 
     }
 
@@ -105,7 +126,7 @@ function Chat(props) {
 
   const [show, setShow] = useState(false);
 
-  const handleClose = () => { setShow(false); setApiMessages([systemJson]); setUpdated(true) ;}
+  const handleClose = () => { setShow(false); setApiMessages([systemJson]); setUpdated(true); }
   const handleShow = () => setShow(true);
 
 
@@ -119,9 +140,7 @@ function Chat(props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(chat)
       }).then(() => {
-        
         console.log('new chat added ');
-        setAdded(added+1);
       });
     }
     else {
@@ -131,7 +150,7 @@ function Chat(props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(message)
       }).then(() => {
-        console.log(' blog deleted');
+        console.log('new blog deleted');
       });
       const chat = { date, apiMessages };
       fetch('http://localhost:8000/chats/', {
@@ -140,8 +159,6 @@ function Chat(props) {
         body: JSON.stringify(chat)
       }).then(() => {
         console.log('new chat added ');
-        
-        setAdded(added+1);
       });
     }
     handleClose();

@@ -69,6 +69,58 @@
           "content": " Das tut mir leid zu hören. Magst du mir mehr darüber erzählen, was los ist?"
         }
       ]
+    },
+    {
+      "id": "7d70",
+      "date": "2024-02-07T20:16:17.681Z",
+      "apiMessages": [
+        {
+          "role": "system",
+          "content": "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrung (nach Beck 1976) auf. Du versucht, bestmöglich auf die Aussagen im Sinne eines sokratischen Dialogs einzugehen. Achte dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren. Duze dein Gegenüber und antworte knapp"
+        },
+        {
+          "role": "user",
+          "content": "hallo"
+        },
+        {
+          "role": "assistant",
+          "content": "Hallo! Wie geht es dir heute?"
+        },
+        {
+          "role": "user",
+          "content": "mir gehts nicht gut"
+        },
+        {
+          "role": "assistant",
+          "content": " Das tut mir leid zu hören. Möchtest du darüber sprechen, was los ist?"
+        }
+      ]
+    },
+    {
+      "id": "88eb",
+      "date": "2024-02-07T20:16:38.329Z",
+      "apiMessages": [
+        {
+          "role": "system",
+          "content": "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrung (nach Beck 1976) auf. Du versucht, bestmöglich auf die Aussagen im Sinne eines sokratischen Dialogs einzugehen. Achte dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren. Duze dein Gegenüber und antworte knapp"
+        },
+        {
+          "role": "user",
+          "content": "hallo"
+        },
+        {
+          "role": "assistant",
+          "content": "Hallo! Wie geht es dir heute?"
+        },
+        {
+          "role": "user",
+          "content": "nicht"
+        },
+        {
+          "role": "assistant",
+          "content": " Das tut mir leid zu hören. Könntest du mir mehr darüber erzählen?"
+        }
+      ]
     }
   ]
 }
