@@ -7,7 +7,7 @@ import MessageList from '../MessageList/MessageList';
 import ChatInput from '../ChatInput/ChatInput';
 import OpenAI from 'openai';
 function Chat(props) {
-  const { dataSource, triggerScrollToBottom, setTriggerScrollToBottom, activeId, setActive, setChanges } = props;
+  const { added,setAdded,dataSource, triggerScrollToBottom, setTriggerScrollToBottom, activeId, setActive, setChanges } = props;
 
   const MAX_NUM_MESSAGES = 50;
   const [messagesModel, setMessagesModel] = useState(dataSource);
@@ -38,7 +38,6 @@ function Chat(props) {
   const openai = new OpenAI({ apiKey: "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", dangerouslyAllowBrowser: true });
   const submitMessage = async (message) => {
     //here generate response
-    console.log("nsnasnn" + message)
     const completion = await openai.chat.completions.create({
       messages: apiMessages,
       model: "ft:gpt-3.5-turbo-1106:personal::8p2K32Em",
@@ -68,7 +67,6 @@ function Chat(props) {
     if (messageToSend) {
 
       submitMessage(messageToSend.message);
-      console.log("hey" + messageToSend.message);
 
     }
 
@@ -121,7 +119,9 @@ function Chat(props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(chat)
       }).then(() => {
+        
         console.log('new chat added ');
+        setAdded(added+1);
       });
     }
     else {
@@ -131,7 +131,7 @@ function Chat(props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(message)
       }).then(() => {
-        console.log('new blog deleted');
+        console.log(' blog deleted');
       });
       const chat = { date, apiMessages };
       fetch('http://localhost:8000/chats/', {
@@ -140,6 +140,8 @@ function Chat(props) {
         body: JSON.stringify(chat)
       }).then(() => {
         console.log('new chat added ');
+        
+        setAdded(added+1);
       });
     }
     handleClose();

@@ -19,11 +19,10 @@ function App() {
 
   const [activeChannelId, setActiveChannelId] = useState(0);
 
-  const [triggerScrollToBottom, setTriggerScrollToBottom] = useState(false);
+  const [triggerScrollToBottom, setTriggerScrollToBottom] = useState(0);
 
   const onItemClick = (id) => {
     setActiveChannelId(id);
-    console.log("jsjs"+id);
     setTriggerScrollToBottom(!triggerScrollToBottom);
   };
   const system =  "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrung (nach Beck 1976) auf. Du versucht, bestmöglich auf die Aussagen im Sinne eines sokratischen Dialogs einzugehen. Achte dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren. Duze dein Gegenüber und antworte knapp";
@@ -35,11 +34,9 @@ function App() {
     }
     for (let i = 0; i < chats.length; i++) {
       if (chats[i].id === activeChannelId) {
-        console.log("found it")
         setDataSource(chats[i].apiMessages) // Return the matching object
       }
     }
-    console.log(dataSource)
   }
     ,[activeChannelId]);
 
@@ -49,9 +46,9 @@ function App() {
   
   const [channelsModel, setchanelsModel] = useState([]);
 
+  const [newAdded,setNewAdded ] = useState(0);
 
-  const {data : chats,isPending,error}=useFetch('http://localhost:8000/chats');
-
+  const {data : chats,isPending,error}=useFetch('http://localhost:8000/chats',newAdded);
 
 
 
@@ -76,7 +73,7 @@ function App() {
             )}
           />
         </div>
-        <Chat setActive={setActiveChannelId} activeId={activeChannelId} triggerScrollToBottom={triggerScrollToBottom} setTriggerScrollToBottom={setTriggerScrollToBottom} dataSource={dataSource} />
+        <Chat added={newAdded} setAdded={setNewAdded} setActive={setActiveChannelId} activeId={activeChannelId} triggerScrollToBottom={triggerScrollToBottom} setTriggerScrollToBottom={setTriggerScrollToBottom} dataSource={dataSource} />
       </div>
 
     </div>
