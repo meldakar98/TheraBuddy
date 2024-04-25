@@ -16,7 +16,6 @@ import Chat from './Chat/Chat';
 import useFetch from './useFetch';
 
 function App() {
-
   const [activeChannelId, setActiveChannelId] = useState(0);
 
   const [triggerScrollToBottom, setTriggerScrollToBottom] = useState(0);
@@ -25,6 +24,7 @@ function App() {
     setActiveChannelId(id);
     setTriggerScrollToBottom(!triggerScrollToBottom);
   };
+  console.log('here')
   const system =  "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrung (nach Beck 1976) auf. Du versucht, bestmöglich auf die Aussagen im Sinne eines sokratischen Dialogs einzugehen. Achte dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren. Duze dein Gegenüber und antworte knapp";
   const systemJson = { role: "system", content:  system  };
   useEffect(()=>{

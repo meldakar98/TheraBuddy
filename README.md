@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Zeitplan
+Unser Zeitplan erstreckte sich über 12 Wochen und gliederte sich in 6 Schritte.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In den ersten beiden Wochen haben wir Forschung und Vorbereitung betrieben. Es war wichtig, das Ziel unseres Projekts zu definieren, welche Funktionen es bieten würde, und die Auswahl des Basismodells sowie einer geeigneten Validierungsmethode zu recherchieren.
 
-## Available Scripts
+In der dritten Woche lag unser Fokus auf der Erstellung des theoretischen Modells. Dies beinhaltete die Entwicklung eines Prototyps und die Planung technischer Entwicklungen.
 
-In the project directory, you can run:
+In den vierten und fünften Wochen begannen wir mit der Umsetzung dieser Entwürfe. Diese Phase dauerte jedoch länger als geplant, da unser Modell mehrere Trainings- und Verbesserungsphasen benötigte. Am Ende dieses Schrittes beschlossen wir, dass wir genügend Zeit und Ressourcen hatten, um eine eigene grafische Benutzeroberfläche zu implementieren, anstatt dass die Interaktion mit dem Modell nur über die Befehlszeile möglich war.
 
-### `npm start`
+In den Wochen sechs bis sieben widmeten wir uns der Validierungsphase. Wir testeten das Modell und verglichen es mit anderen Modellen. Dabei maßen wir die Leistung und erkannten potenzielle Verbesserungsmöglichkeiten.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Am Ende unseres Projekts beschäftigten wir uns mit der Finalisierung der Benutzeroberfläche und der Vorstellung des Endprodukts.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# TheraBuddy
 
-### `npm test`
+Dieses Chat-Tool wurde entwickelt, um Nutzern die Möglichkeit zu geben,  mit KI-basierten Therapeuten in Dialog zu treten. Die Anwendung basiert  auf der React-Technologie, die für ihre Fähigkeit bekannt ist, eine  ästhetisch ansprechende Benutzeroberfläche zu schaffen, die gleichzeitig  reaktionsschnell und benutzerfreundlich ist. Durch die Implementierung  von React können wir eine interaktive Plattform bieten, die es den  Nutzern ermöglicht, auf einfache und intuitive Weise mit den  KI-Therapeuten zu kommunizieren, wodurch ein angenehmes und effektives  Therapieerlebnis geschaffen wird.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##### **Dokumentation der technische Seite:**
+In unserem Entwicklungsprozess haben wir uns intensiv mit bewerteten und korrigierten Beispielgesprächen auseinandergesetzt. Die resultierenden Daten wurden sorgfältig in das richtige Format gebracht und entsprechend gelabelt, um eine präzise Kontrolle über den Trainingsprozess zu gewährleisten. Dabei haben wir uns bewusst für das OpenAI API entschieden und speziell für GPT Turbo 3.5 als unser gewähltes Modell.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Es war uns klar, dass das von OpenAI bereitgestellte Prompt-Tuning keine herkömmliche Feinabstimmung ermöglicht und relativ restriktiv ist. Das bedeutet, dass wir in einer Art "Sandkasten" arbeiten, in dem wir begrenzte Möglichkeiten haben, das Modell wesentlich zu verändern.
 
-### `npm run eject`
+Wir haben das Modell bereits drei Mal trainiert und bei jedem Durchlauf gründlich getestet. Dabei haben wir Potenziale zur Verbesserung identifiziert, die durch die Integration verschiedener Datensätze erreicht werden könnten. Schließlich haben wir eine benutzerfreundliche GUI (Benutzeroberfläche) entwickelt, die folgende Funktionen bietet:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+` `Chatmöglichkeit mit dem Modell.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Die Option, Chats zu speichern, um sie später an Therapeuten weiterzuleiten oder zu einem späteren Zeitpunkt erneut einzusehen.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Dieser Ansatz ermöglicht es uns, die Anwendung des Modells nicht nur zu optimieren, sondern auch eine benutzerfreundliche Plattform zu schaffen, die sowohl für Nutzer als auch für Fachleute im therapeutischen Bereich ansprechend ist.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Validierung:** 
 
-### Making a Progressive Web App
+Abschließend haben wir nach Metriken gesucht, die geeignet sind, um das Modell zu evaluieren. Zur Evaluierung haben wir vergleichbare Gespräche sowohl mit unserem feinabgestimmten Modell als auch mit dem herkömmlichen ChatGPT 3.5 geführt, um am Ende zu zeigen, ob unser Feintuning die Leistung und das Verhalten des Modells positiv beeinflusst hat.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**TheraBuddy**: Dokumentenportraits
 
-### Deployment
+Unser endgültiges Modell des TherapyBuddys zeigt eine deutliche Überlegenheit im Vergleich zur nicht finegetuneten Version von ChatGP3.5 Turbo. Um diesen Vergleich ziehen zu können, habe ich eine kleine qualitative Validierung von acht Dialogen durchgeführt, indem ich so-wohl mit ChatGPT3.5 Turbo und unseren TherapyBuddy zu den vier Themen „Zukunfts-angst“, „Uni“, „Liebenwert“, „Scheitern“ Gespräche geführt habe (siehe Anhang). Dabei fällt auf, dass der TherapyBuddy im Vergleich deutlich weniger unerwünschte Fachsprache ver-wendet. Außerdem macht er mehr Gebrauch von sokratischen Gesprächsführungstechniken, wie z.B. dem Modell der Verantwortlichkeit oder die logische Analyse, beides kommt bei dem Gespräch mit ChatGPT so gut wie gar nicht vor. Lösungs- und Handlungsmöglichkeiten, so-wie Erklärungshypothesen und Alternativbewertungen werden von beiden Modellen ange-sprochen. ChatGPT3.5 Turbo ist in der Anwendung allerdings weniger konstant – mal spricht er sie an, mal aber auch nicht. Außerdem fällt im Vergleich auf, dass dieses dazu neigt, die kognitive Umstrukturierung teilweise komplett zu überspringen und direkt auf die Verhaltens-ebene versucht zu wechseln. Beide Modell ähneln sich darin, dass sie zunächst genauere In-formationen zum Sachverhalt des konkreten Gedankens sammeln und dass sie versuchen mögliche Zusammenhänge sowie Erklärungen für Erlebtes aufzuzeigen.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+

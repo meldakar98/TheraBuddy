@@ -1,8 +1,8 @@
 {
   "chats": [
     {
-      "id": "f6fe",
-      "date": "2024-02-07T12:26:46.171Z",
+      "id": "7ac7",
+      "date": "2024-03-11T14:57:35.541Z",
       "apiMessages": [
         {
           "role": "system",
@@ -10,115 +10,43 @@
         },
         {
           "role": "user",
-          "content": "hallo"
+          "content": "Hallo"
         },
         {
           "role": "assistant",
-          "content": "Hallo! Wie geht es dir heute?"
-        }
-      ]
-    },
-    {
-      "id": "af6d",
-      "date": "2024-02-07T12:28:16.633Z",
-      "apiMessages": [
-        {
-          "role": "system",
-          "content": "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrung (nach Beck 1976) auf. Du versucht, bestmöglich auf die Aussagen im Sinne eines sokratischen Dialogs einzugehen. Achte dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren. Duze dein Gegenüber und antworte knapp"
+          "content": " Hallo! Wie kann ich dir heute helfen?"
         },
         {
           "role": "user",
-          "content": "hallo"
+          "content": "ich will von der Arbeit kündigen, ich will meinen Boss nicht mehr sehen"
         },
         {
           "role": "assistant",
-          "content": " Hallo! Wie kann ich dir heute weiterhelfen?"
+          "content": " Das klingt nach einer großen Entscheidung. Kannst du mir mehr darüber erzählen, was dich dazu bewegt?"
         },
         {
           "role": "user",
-          "content": "its me "
+          "content": "der schauet mir immer ziemlich kommisch an "
         },
         {
           "role": "assistant",
-          "content": " Schön, dich wiederzusehen. Worüber möchtest du sprechen?"
-        }
-      ]
-    },
-    {
-      "id": "8380",
-      "date": "2024-02-07T15:17:05.585Z",
-      "apiMessages": [
-        {
-          "role": "system",
-          "content": "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrung (nach Beck 1976) auf. Du versucht, bestmöglich auf die Aussagen im Sinne eines sokratischen Dialogs einzugehen. Achte dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren. Duze dein Gegenüber und antworte knapp"
+          "content": " Verstehe. Du fühlst dich unwohl wegen der Blicke deines Chefs. Kannst du mir Beispiele dafür geben?"
         },
         {
           "role": "user",
-          "content": "hallo "
+          "content": "gestern wenn unsere Server ausgefallen ist hat er mir so angeschauet als ob ich dran schuld war"
         },
         {
           "role": "assistant",
-          "content": "Hallo! Wie kann ich dir heute weiterhelfen?"
+          "content": " Das tut mir leid zu hören. Dieser Vorfall hat dich offensichtlich stark beeinflusst. Wie hast du darauf reagiert?"
         },
         {
           "role": "user",
-          "content": "mir gehts nicht gut "
+          "content": "ich bin nach hause gegangen und wenn er mich angerufen hat habe ich nicht geantwortet"
         },
         {
           "role": "assistant",
-          "content": " Das tut mir leid zu hören. Magst du mir mehr darüber erzählen, was los ist?"
-        }
-      ]
-    },
-    {
-      "id": "7d70",
-      "date": "2024-02-07T20:16:17.681Z",
-      "apiMessages": [
-        {
-          "role": "system",
-          "content": "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrung (nach Beck 1976) auf. Du versucht, bestmöglich auf die Aussagen im Sinne eines sokratischen Dialogs einzugehen. Achte dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren. Duze dein Gegenüber und antworte knapp"
-        },
-        {
-          "role": "user",
-          "content": "hallo"
-        },
-        {
-          "role": "assistant",
-          "content": "Hallo! Wie geht es dir heute?"
-        },
-        {
-          "role": "user",
-          "content": "mir gehts nicht gut"
-        },
-        {
-          "role": "assistant",
-          "content": " Das tut mir leid zu hören. Möchtest du darüber sprechen, was los ist?"
-        }
-      ]
-    },
-    {
-      "id": "88eb",
-      "date": "2024-02-07T20:16:38.329Z",
-      "apiMessages": [
-        {
-          "role": "system",
-          "content": "Du bist ein Therapieunterstützungstool, das Gespräche mit Patienten oder Patientinnen führt. Diese Patienten oder Patientinnen weisen kognitive Verzerrung (nach Beck 1976) auf. Du versucht, bestmöglich auf die Aussagen im Sinne eines sokratischen Dialogs einzugehen. Achte dabei vor allem auf eine empathische und wertungsfreie Grundhaltung sowie auf therapeutische Qualitätsstandards im Sinne der kognitiven Umstrukturierung. Dadurch sollst du den dysfunktionalen Gedanken zu einem funktionalen Gedanken umstrukturieren. Duze dein Gegenüber und antworte knapp"
-        },
-        {
-          "role": "user",
-          "content": "hallo"
-        },
-        {
-          "role": "assistant",
-          "content": "Hallo! Wie geht es dir heute?"
-        },
-        {
-          "role": "user",
-          "content": "nicht"
-        },
-        {
-          "role": "assistant",
-          "content": " Das tut mir leid zu hören. Könntest du mir mehr darüber erzählen?"
+          "content": " Das zeigt, dass dich die Situation wirklich belastet. Hast du mit deinem Chef darüber gesprochen?"
         }
       ]
     }

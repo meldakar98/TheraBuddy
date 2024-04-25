@@ -35,7 +35,7 @@ function Chat(props) {
 
 
 
-  const openai = new OpenAI({ apiKey: "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", dangerouslyAllowBrowser: true });
+  const openai = new OpenAI({ apiKey: "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", dangerouslyAllowBrowser: true });
   const submitMessage = async (message) => {
     //here generate response
   console.log("nsnasnn" + message)
